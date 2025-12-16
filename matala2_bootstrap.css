@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.border-red {
+  border: 2px solid red;
+}
+
+/* Same idea as your original "half-height" */
+.half-height {
+  height: 50%;
+}
+
+.right-panel {
+  padding: 0;
+}
+
+/* IMPORTANT FIX:
+   Give the ROWS a real height so % doesn't collapse */
+.row1 { height: 29%; }
+.row2 { height: 29%; }
+.row3 { height: 29%; }
+
+/* Row 1 boxes fill their row */
+.box-row1 {
+  height: 100%;
+  margin: 1%;
+}
+
+/* Row 2 left half: two stacked boxes */
+.box-row2-first-half {
+  height: 100%;
+}
+
+.half-from-half {
+  height: 40%;
+  margin: 1.5% 0 0% 2%;
+  width: 96%;
+}
+
+/* Row 2 right half */
+.box-row2-second-half {
+  height: 100%;
+  margin: 1%;
+}
+
+/* Row 3 */
+.box-row3-75,
+.box-row3-25 {
+  height: 100%;
+  margin: 1%;
+}
+
+/* ===== Responsive (like your original max-width: 750px) ===== */
+@media screen and (max-width: 750px) {
+  /* hide left panel and the left-half of row 2 */
+  .left-panel,
+  .box-row2-first-half {
+    display: none !important;
+  }
+
+  /* right becomes full screen */
+  .right-panel {
+    width: 100% !important;
+    height: 100% !important;
+    border-top: 5px solid red;
+  }
+
+  /* CRITICAL: rows must not force fixed heights on mobile */
+  .row1,
+  .row2,
+  .row3 {
+    height: auto !important;
+  }
+
+  /* stack all visible boxes nicely */
+  .box-row1,
+  .box-row2-second-half,
+  .box-row3-75,
+  .box-row3-25 {
+    width: 96% !important;
+    margin: 1% 1% 1% 2% !important;
+    height: 12% !important;
+  }
+}

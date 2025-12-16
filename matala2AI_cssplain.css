@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.main-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.main-box {
+  border: 1px solid red;
+  float: left;
+}
+
+/* דיב ראשון */
+.box1 {
+  width: 20%;
+  height: 100%;
+}
+
+/* דיב שני */
+.box2 {
+  width: 80%;
+  height: 100%;
+  padding: 2%;
+}
+
+/* שורה ראשונה */
+.row1 {
+  width: 22%;
+  height: 29%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  float: left;
+  border: 1px solid red;
+}
+
+/* שורה שנייה */
+.row2 {
+  width: 100%;
+  height: 29%;
+  display: flex;
+  margin-bottom: 2%;
+}
+
+/* חצי ראשון של השורה השנייה */
+.half-top {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 2%;
+}
+
+/* המלבנים הפנימיים של החצי הראשון */
+.half-top .inner {
+  height: 48%;
+  border: 1px solid red;
+}
+
+/* חצי שני של השורה השנייה */
+.half-bottom {
+  width: 48%;
+  border: 1px solid red;
+}
+
+/* שורה שלישית */
+.row3-large {
+  width: 70%;
+  height: 29%;
+  margin-right: 2%;
+  float: left;
+  border: 1px solid red;
+}
+
+.row3-small {
+  width: 28%;
+  height: 29%;
+  float: left;
+  border: 1px solid red;
+}
+
+/* רספונסיביות ל-750px ומטה */
+@media screen and (max-width: 750px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .main-box {
+    width: 100%;
+    height: auto;
+  }
+
+  .box2 {
+    padding: 1%;
+  }
+
+  .row, .half, .half .inner, .row3-large, .row3-small {
+    width: 100% !important;
+    float: none;
+    height: 60px; /* אפשר לשנות לגובה אחיד לפי הצורך */
+    margin: 5px 0;
+  }
+
+  .row2 {
+    display: block;
+  }
+
+  .half-top {
+    display: block;
+  }
+}

@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --outer-border: 3px;
+  --inner-border: 2px;
+  --gap: 14px;
+}
+      
+/* מסגרת חיצונית בלבד - בלי רווח שיוצר שכבה נוספת */
+.main-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  border: var(--outer-border) solid red;
+}
+
+/* מסגרות של שני הבלוקים הראשיים */
+.main-box {
+  border: var(--inner-border) solid red;
+}
+
+/* צד שמאל */
+.box1 {
+  width: 20%;
+  height: 100%;
+}
+
+/* צד ימין */
+.box2 {
+  width: 80%;
+  height: 100%;
+  padding: var(--gap);          /* הרווחים רק בפנים, לא בחוץ */
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  align-content: space-between;
+}
+
+/* שלוש שורות בגובה אחיד */
+.row1,
+.row2,
+.row3-large,
+.row3-small {
+  height: calc((100% - (2 * var(--gap))) / 3);
+}
+
+/* 4 מלבנים עליונים */
+.row1 {
+  flex: 0 0 calc((100% - (3 * var(--gap))) / 4);
+  border: var(--inner-border) solid red;
+}
+
+/* שורה אמצעית */
+.row2 {
+  flex: 0 0 100%;
+  display: flex;
+  gap: var(--gap);
+}
+
+/* חצי שמאל בשורה האמצעית */
+.half-top {
+  flex: 0 0 calc((100% - var(--gap)) / 2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.half-top .inner {
+  flex: 1;
+  border: var(--inner-border) solid red;
+}
+
+/* חצי ימין בשורה האמצעית */
+.half-bottom {
+  flex: 1;
+  border: var(--inner-border) solid red;
+}
+
+/* שורה תחתונה */
+.row3-large {
+  flex: 0 0 70%;
+  border: var(--inner-border) solid red;
+}
+
+.row3-small {
+  flex: 1;
+  border: var(--inner-border) solid red;
+}
+
+/* מובייל */
+@media screen and (max-width: 750px) {
+  .main-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .main-box {
+    width: 100%;
+    height: auto;
+  }
+
+  .box2 {
+    display: block;
+    padding: var(--gap);
+  }
+
+  .row,
+  .half,
+  .half .inner,
+  .row3-large,
+  .row3-small {
+    width: 100% !important;
+    height: 70px;
+    margin-bottom: var(--gap);
+  }
+
+  .row2,
+  .half-top {
+    display: block;
+  }
+}
