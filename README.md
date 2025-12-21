@@ -14,4 +14,4 @@ This project compares manual development with AI-assisted approaches and highlig
 
 Thank you for viewing our project, Adi, Noya, Tomer
 
-Link: file:///C:/Users/user/OneDrive%20-%20The%20Academic%20College%20of%20Tel-Aviv%20Jaffa%20-%20MTA/%D7%A9%D7%95%D7%9C%D7%97%D7%9F%20%D7%94%D7%A2%D7%91%D7%95%D7%93%D7%94/%D7%AA%D7%9B%D7%A0%D7%95%D7%AA%20WEB/tirgul_3/matala_2/index.html
+Link: https://noya555.github.io/MATALA_2_ADI_NOYA_TOMER/
